@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="card" class="aa1" *ngIf="updateerr==true" style="    margin-left: 193px;">
+    <div class="card-header1">
+      <i style="font-size:24px" class="fa">&#xf00d;</i>
+    </div>
+    <i class="fa" style="    margin-top: 4px;
+     margin-left: 230px;
+     font-size: 50px;">&#xf14a;</i>
+    <div class="card-body">
+
+      <h5 class="card-title" style="text-align: center;margin-top:10px ; margin-bottom:10px">{{updatemg}}</h5>
+      <a (click)="upfun()" class="btn btn-primary" style="  width: 168px;
+             background-color: forestgreen;
+             margin-left: 172px;">Ok</a>
+    </div>
+  </div>
+  <form (ngSubmit)="updateData()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label><br>
+      <input type="text" name="name" [(ngModel)]='res.name' id="exampleInputEmail1" aria-describedby="emailHelp">
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Price</label>
+      <input type="number" name="price" [(ngModel)]="res.price" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Quantity</label>
+      <input type="number" name="quantity" [(ngModel)]="res.quantity" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Description</label>
+      <input type="text" name="description" [(ngModel)]="res.description" class="form-control"
+        id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Image URL</label>
+      <input type="text" name="img" [(ngModel)]="res.img" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>

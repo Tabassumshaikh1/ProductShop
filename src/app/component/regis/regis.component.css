@@ -1,0 +1,33 @@
+form{
+  
+
+        height: 272px;
+        margin-top: -578px;
+        width: 438px;
+        border-radius: 30px;
+        height: 465px;
+        box-shadow: 1px 2px 3px 4px;
+        padding: 40px;
+        background-color: hotpink;
+        margin-left: 732px;
+        border: 2px solid black;
+    }
+
+
+h2{
+margin-top: -23px;
+text-align: center;
+border: 1px solid grey;
+border-radius: 27px;
+background-color: darkorange;
+}
+.aa1{
+width: 200;
+width: 342px;
+margin: 10px;
+margin-left: 1px;
+}
+h1 {
+    text-align: center;
+    color: whitesmoke;
+}

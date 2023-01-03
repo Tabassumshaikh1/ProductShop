@@ -1,0 +1,44 @@
+form {
+    margin-top: 22px;
+    width: 673px;
+    height: 559px;
+    padding-right:20px;
+    margin-left: 170px;
+    border-radius: 30px;
+    box-shadow: 1px 2px 3px 4px;
+    padding-left: 41px;
+    padding-top: 20px;
+
+
+    /* text-align: center; */
+  
+}
+.card-header1{
+    /* margin-left: 406px; */
+   
+    /* text-align: center; */
+    /* margin-top: 8px; */
+    padding-left: 453px;
+    background-color: darkseagreen;
+    margin-bottom: 10px;
+    color: black;
+    width: 496px;
+    margin-right: 10px;
+}
+button.btn.btn-primary {
+    margin-left: 183px;
+    width: 300px;
+}
+.aa1{
+    border: 2px solid black;
+    width: 500px;
+    margin-left: 442px;
+    color: green;
+    background-color: aliceblue;
+    /* background-color: goldenrod; */
+    margin-top: 18px;
+   
+    height: 400px;
+  
+    height: 200px;
+}

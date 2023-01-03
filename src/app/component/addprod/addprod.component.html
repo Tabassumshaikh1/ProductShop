@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="card" class="aa1" *ngIf="prodsucc" style="margin-left: 326px;">
+
+    <div class="card-body" style="height:300px">
+      <div class="card-header1">
+        <i style="font-size:24px" class="fa">&#xf00d;</i>
+      </div>
+
+      <i class="fa" style="    margin-top: 4px;
+        margin-left: 230px;
+        font-size: 50px;">&#xf14a;</i>
+
+      <h5 class="card-title" style="font-size:30px ; text-align: center; margin-bottom:10px">{{prodmsg}}</h5>
+
+      <a routerLink="/mydata" (click)="addfun()" style="  width: 168px;
+      background-color: forestgreen;
+      margin-left: 172px;" class="btn btn-primary">Ok</a>
+    </div>
+  </div>
+
+
+
+  <form [formGroup]="myForm" (ngSubmit)="postdata()">
+    <div class="form-group">
+      <label>Name <span style="color:red">*</span></label><br>
+      <input name="name" formControlName="name" />
+
+
+      <span style="color:red" *ngIf="fdata['name'].invalid && fdata['name'].touched">
+        <p *ngIf="fdata['name'].errors && fdata['name'].errors['required']">
+          Name is required </p>
+        <p *ngIf="fdata['name'].errors && fdata['name'].errors['pattern']">
+          Only Alphabets are allowed.
+        </p>
+      </span>
+
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword1" class="form-label">Price <span style="color:red">*</span></label><br>
+      <input name="price" lass="form-control" id="exampleInputPassword1" formControlName="price">
+      <span style="color:red" *ngIf="fdata['price'].invalid && fdata['price'].touched">
+        <p *ngIf="fdata['price'].errors && fdata['price'].errors['required']">
+          Price is required
+
+        </p>
+        <p *ngIf="fdata['price'].errors && fdata['price'].errors['pattern']">
+
+          Price Should not start with zero and one digit is not allow.
+        </p>
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" class="form-label">Quantity <span style="color:red">*</span></label><br>
+      <input name="quantity" formControlName="quantity">
+      <span style="color:red" *ngIf="fdata['quantity'].invalid && fdata['quantity'].touched">
+        <p *ngIf="fdata['quantity'].errors && fdata['quantity'].errors['required']">
+          Quantity is required
+
+        </p>
+        <p *ngIf="fdata['quantity'].errors && fdata['quantity'].errors['pattern']">
+
+          quantity Should not be zero
+        </p>
+      </span>
+
+    </div>
+    <!-- <div class="form-group">
+            <label for="exampleInputPassword1" class="form-label">Description</label><br>
+            <input  name="description"     formControlName="description" />
+            <div class="alert alert-danger" *ngIf="fdata['description'].invalid && fdata['description'].touched">
+              <div *ngIf="fdata['description'].errors && fdata['description'].errors['required']">
+                Description is required *
+              </div>
+               
+             <div *ngIf="fdata['description'].errors && fdata['description'].errors['pattern']">
+                 description Should not start with zero 
+             
+              </div> 
+            </div>
+          </div> -->
+    <div class="form-group">
+      <label for="exampleInputPassword1" class="form-label">Description <span style="color:red">*</span></label>
+      <input type="text" name="description" formControlName="description">
+      <span style="color:red" *ngIf="fdata['description'].invalid && fdata['description'].touched">
+        <p *ngIf="fdata['description'].errors && fdata['description'].errors['required']">
+          Description is required
+        </p>
+        <p *ngIf="fdata['description'].errors && fdata['description'].errors['pattern']">
+          description Shoulud be greater than 10 characters
+
+        </p>
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" class="form-label">Image URL <span style="color:red">*</span></label>
+      <input type="text" name="img" formControlName="img">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+
+  </form>
+</div>

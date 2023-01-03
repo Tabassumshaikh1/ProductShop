@@ -1,0 +1,117 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<app-search (searchTextChange)="onsearchtextentered($event)">
+
+</app-search>
+
+<!-- <div *ngIf="succMsg" >
+      <p>{{succMsg}}</p>
+      </div> -->
+<div class="card" class="aa1" *ngIf="succMsg">
+
+  <div class="card-body" style="height:300px">
+    <div class="card-header1">
+      <i style="font-size:24px" class="fa">&#xf00d;</i>
+    </div>
+
+    <i class="fa" style="    margin-top: 4px;
+            margin-left: 230px;
+            font-size: 50px;">&#xf14a;</i>
+
+    <h5 class="card-title" style="font-size:30px">{{succMsg}}</h5>
+
+    <a routerLink="/addtocartitems" style="  width: 168px;
+          background-color: forestgreen;
+          margin-left: 172px;" class="btn btn-primary">Ok</a>
+  </div>
+</div>
+<div class="card" class="aa1" *ngIf="err==true">
+  <div class="card-header1">
+    <i style="font-size:24px" class="fa">&#xf00d;</i>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">{{errMsg}}</h5>
+    <a (click)="errFun()" class="btn btn-primary" style="  width: 168px;
+                 background-color: forestgreen;
+                 margin-left: 172px;">Ok</a>
+  </div>
+</div>
+<div class="card" class="aa1" *ngIf="delsucc==true">
+  <div class="card-header1">
+    <i style="font-size:24px" class="fa">&#xf00d;</i>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">{{delmsg}}</h5>
+    <a (click)="delfun()" class="btn btn-primary" style="  width: 168px;
+                 background-color: forestgreen;
+                 margin-left: 172px;">Ok</a>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row gx-5">
+
+    <div class="col-md-3" style="width:350px"
+      *ngFor="let user of userData | paginate: {itemsPerPage:3 ,currentPage:page, totalItems:totaleLength }">
+      <div class="search" style="width:350px; border:20px"
+        *ngIf="searchtext === '' || user.name.toLowerCase().includes(searchtext) ">
+        <div class="card update">
+          <div class="card-body ">
+            <h5 class="card-title" style="font-size: 16px;">{{user.name | titlecase}}</h5>
+            <a routerLink="/view/{{user._id}}">
+              <img src="{{user.img}}" style="width: 280px;
+              height: 270px;
+                margin: 6px;
+            ">
+            </a>
+            <p class="card-text" style="    margin-top: 5px;
+              font-size: 30px;
+              font-weight: bolder;
+              margin-bottom: 0px;"> ₹. {{user.price}}</p>
+            <span class="fa fa-star checked" style="color:yellow"></span>
+            <span class="fa fa-star checked" style="color:yellow"></span>
+            <span class="fa fa-star checked" style="color:yellow"></span>
+            <span class="fa fa-star checked" style="color:yellow"></span>
+
+            <span class="fa fa-star"></span><br>
+            FREE Delivery by Amazon
+
+            <!-- <p class="card-text">Quantity : {{user.quantity }}</p>
+              <p class="card-text">Description : {{user.description | titlecase}}</p> -->
+            <br>
+            <div style="display: flex; ">
+              <button mat-raised-button color="primary" *ngIf="isAdmin" routerLink="/updateprod/{{user._id}}"
+                class="btn btn-primary "
+                style="height:40px;margin-left:0px; margin-top:0px; background-color:blue; width: 90px"><i
+                  class="material-icons">&#xe22b;</i></button>
+              <!-- <button class="btn btn-primary" (click)="updateprod(user._id,userData)"> Edit</button> -->
+              <!-- <a routerLink="/addtocart/{{user._id}}" class="btn btn-primary ">Add to cart</a>    -->
+              <button mat-raised-button *ngIf="isAdmin" style="height:40px; width: 100px" color="warn"
+                (click)="deletepro(user._id)"><i style="font-size:24px" class="fa">&#xf014;</i></button>
+              <button mat-raised-button class="my-class" color="warn" style="    font-size: 24px;
+    width: 70px;
+    padding-left: 24px;
+    height: 85px !important;" (click)=" addtocartitems(user._id)" style="margin-left:10px">
+                <i material-icons
+                  style="font-size:24px; padding-top:10px; padding-bottom:20px; padding-top:20px;width:64px;"
+                  class="fa">&#xf067;</i>
+                <!-- <span class="material-icons">home</span> -->
+
+              </button>
+              <!-- <a mat-raised-button style="height:40px; width: 100px ; margin-left:10px" color="primary" routerLink="/view/{{user._id}}"><i style="font-size:24px" class="fa">&#xf06e;</i></a> -->
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<pagination-controls (pageChange)="page = $event" class="text-center"></pagination-controls>

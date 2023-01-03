@@ -1,0 +1,47 @@
+<div *ngIf="errMsg" class="alert alert-danger">
+    {{errMsg}}
+</div>
+<div *ngIf="succMsg" class="alert alert-success">
+    {{succMsg}}
+</div>
+<div class="row">
+    <div class="col">
+        <img src="https://www.addictioncenter.com/cdn-cgi/image/width=780,height=400,fit=cover,format=auto,quality=100/app/uploads/2020/01/online_shopping_addiction-scaled.jpeg"
+            alt="" style="width: 1319px; height:600px">
+    </div>
+    <div class="col" class="formcol">
+
+        <form [formGroup]="myForm" (ngSubmit)="postData()">
+            <h1>REGISTER</h1>
+            <div class="form-group">
+                <label style="color:whitesmoke">Email</label><br>
+                <input type="text" name="email" formControlName="email" style="  width: 347px;">
+                <!-- <span style="color:red" *ngIf="fdata['email'].invalid && fdata['email'].touched"> -->
+                <!-- <p *ngIf="fdata['email'].errors && fdata['email'].errors['required']">
+                        EMail is required </p>
+                    <p *ngIf="fdata['email'].errors && fdata['email'].errors['pattern']">
+                        Enter Proper mail eg: abc@gmail.com
+                    </p>
+                </span> -->
+            </div>
+            <div class="form-group">
+                <label style="color:whitesmoke">password</label><br>
+                <input type="password" name="password" formControlName="password" style="  width: 347px;">
+            </div>
+            <div class="form-group">
+                <label style="color:whitesmoke">FirstName</label><br>
+                <input type="string" name="firstName" formControlName="firstName" style="  width: 347px;">
+            </div>
+            <div class="form-group">
+                <label style="color:whitesmoke">LastName</label><br>
+                <input type="string" name="lastName" formControlName="lastName" style="  width: 347px;">
+            </div>
+            <div class="form-group">
+                <label style="color:whitesmoke">Contact</label><br>
+                <input type="string" name="contactNumber" formControlName="contactNumber" style="  width: 347px;">
+            </div>
+            <input type="submit" value="Register" class="btn btn-success" [disabled]="myForm.invalid"
+                style="width:347px; margin-top:20px">
+        </form>
+    </div>
+</div>

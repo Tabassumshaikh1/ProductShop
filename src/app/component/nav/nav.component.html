@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+<div class="card" class="aa1" *ngIf="logsucc==true">
+  <div class="card-header1">
+    <i style="font-size:24px" class="fa">&#xf00d;</i>
+  </div>
+  <i class="fa" style=" color:green;   margin-top: 4px;
+     margin-left: 230px;
+     font-size: 50px;">&#xf14a;</i>
+  <div class="card-body">
+
+    <h5 class="card-title" style="text-align: center;margin-top:10px ; margin-bottom:10px">{{logmsg}}</h5>
+    <a (click)="logfun()" class="btn btn-primary" style="  width: 168px;
+             background-color: forestgreen;
+             margin-left: 172px;">Ok</a>
+  </div>
+</div>
+<div class="aa">
+  <UL>
+
+    <li> <a class="nav-link active" aria-current="page" routerLink="home"><i class="fa fa-home"></i>Home</a>
+    </li>
+    <li><a class="nav-link active" aria-current="page" *ngIf="loggedIn && isAdmin" routerLink="addprod"><i style="font-size:24px; margin-left: 8px;
+    margin-right: 10px;    margin-left: 22px;" class="fa">&#xf067;</i>Add Product</a></li>
+    <li>
+      <h1 style="margin-top:10px;    margin-right: -220px;margin-left: 341px;">
+
+        Amazon
+      </h1>
+    </li>
+    <!-- <li> <input type="text" placeholder="Search.." [(ngModel)]="entersearchValue" (input)="onsearchtextexchange"><i style="font-size:24px" class="fa">&#xf002;</i> -->
+    <!-- </li> -->
+
+    <li>
+      <a class="nav-link" routerLink="/addtocartitems" *ngIf="loggedIn"> <span *ngIf="count>0"> <i
+            style="font-size:24px;    margin-left: 21px;" class="fa">&#xf290;</i>{{count}}</span>
+
+
+      </a>
+    </li>
+    <!-- sidebar -->
+
+
+
+
+
+    <button class="mat" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon> person_pin</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <li><a class="nav-link active" *ngIf="!loggedIn" aria-current="page" routerLink="login">Login</a></li>
+      <li><a class="nav-link active" *ngIf="!loggedIn" aria-current="page" routerLink="signup">Signup</a></li>
+      <button mat-menu-item *ngIf="loggedIn">
+        <mat-icon>person</mat-icon>
+        <span>Role</span>
+        <p>{{userdata.role}}</p>
+      </button>
+      <button mat-menu-item *ngIf="loggedIn">
+        <mat-icon>person</mat-icon>
+        <span>Name</span>
+        <p>{{userdata.firstName}} {{userdata.lastName}} </p>
+      </button>
+      <button mat-menu-item *ngIf="loggedIn">
+        <mat-icon> email</mat-icon>
+        <span>Email</span>
+        <p>{{userdata.email}}</p>
+      </button>
+      <button mat-menu-item *ngIf="loggedIn">
+        <mat-icon>perm_phone_msg</mat-icon>
+        <span>Number</span>
+        <p>{{userdata.contactNumber}} </p>
+      </button>
+      <li> <a class="nav-link active" *ngIf="loggedIn" routerLink="#" aria-current="page" (click)="signOut()">Logout</a>
+      </li>
+    </mat-menu>
+
+
+
+
+
+
+
+  </UL>
+  <div class="bor">
+    <hr>
+  </div>
+
+</div>
+<!-- <nav class="navbar navbar-expand-lg  bg mt-3">
+
+    <div class="container-fluid">
+     
+      
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav"> -->
+<!--           
+          <a class="nav-link active" aria-current="page" routerLink="/"><i class="fa fa-home"></i>Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="addprod"><i style="font-size:24px; margin-left: 8px;
+            margin-right: 10px;" class="fa">&#xf067;</i>Add Product</a> -->
+<!-- <a class="nav-link active" aria-current="page" routerLink="login">Login</a>
+          <a class="nav-link active" aria-current="page" routerLink="regis">Register</a> -->
+
+<!-- <a class="nav-link active" aria-current="page" routerLink="addtocartitems">Add to cart Product</a> -->
+<!-- <a class="nav-link active" aria-current="page" routerLink="addtocart">CartItems</a>  -->
+<!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/addtocartitems" > <span *ngIf="count>0"> <img src="https://th.bing.com/th/id/OIP.92ZN9bpqAWVvuO928uqawgHaHa?w=198&h=198&c=7&r=0&o=5&pid=1.7" alt="" style="    margin-left: 847px;
+            " >{{count}}</span>
+             
+             
+            </a>
+          </li> -->
+<!--         
+        </div>
+      </div>
+    </div>
+  
+  </nav> -->
+
+<!-- <a routerLink="/">Product</a>
+<a routerLink="addprod">Add Product</a> -->
+<!-- <a routerLink="updateprod">update Product</a> -->
+<div>
+  <router-outlet></router-outlet>
+</div>

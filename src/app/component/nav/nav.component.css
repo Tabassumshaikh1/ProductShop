@@ -1,0 +1,83 @@
+div#navbarNavAltMarkup {
+    color: red;
+    background-color: royalblue;
+    height: 90px;
+    font-size: 23px;
+    color: white;
+   
+}
+::before {
+    margin-left: 57px;
+    margin-right: 11px;
+    /* height: 130px; */
+    /* height: 100px; */
+}
+.b1{
+    color:black
+}
+.navi {
+    /* border: 2px solid black; */
+    margin-left: -32px;
+    margin-top: -25px;
+    height: 52px;
+    margin-bottom: -41px;
+
+    color: white;
+   
+}
+.aa1{
+    border: 2px solid black;
+    width: 500px;
+    margin-left: 442px;
+    color: green;
+    background-color: aliceblue;
+    /* background-color: goldenrod; */
+    margin-top: 18px;
+   
+    height: 400px;
+  
+    height: 200px;
+}
+.mat{
+    margin-left:700px; font-size: 28px;
+}
+
+.aa{
+    background-color:gold;
+}
+img {
+    height: 58px;
+    margin-left: 950px;
+    margin-right: -17px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+a.nav-link.active {
+    font-size: 23px;
+    margin-top: 7px;
+}
+ul li{
+    display:inline-block;
+    /* margin-left:10px; */
+    font-size: 25px;
+}
+h1 {
+    margin-left: 251px;
+ 
+    font-size: 41px;
+    font-style: italic;
+}
+input[type="text"] {
+    margin-left: 213px;
+    width: 212px;
+    border-radius: 22px;
+    text-align: center;
+}
+i.fa {
+    margin-left: -38px;
+    color: black;
+}
+.bor{
+    color:black;
+    box-shadow:1px 2px 5px
+}

@@ -1,0 +1,26 @@
+<div class="container">
+   
+
+    <div class="row ">
+        <div class="col-sm-3 m-3 b-2" *ngFor="let user of mydata">
+          
+            <div class="card m-3" style="width: 20rem ">
+                <div class="card-body " style=" margin-right:20px">
+    
+                  <h5 class="card-title" style="text-align: center;">{{user.name | titlecase}} </h5>
+                  <img src="{{user.img}}" style="width: 215px;height: 124px;margin: 6px;">
+                  <p class="card-text">Price : {{user.price}}</p>
+                  <p class="card-text">Quantity : {{user.quantity}}</p>
+                  <p class="card-text">Description : {{user.description}}</p>
+                  <button mat-raised-button color="warn" (click)="deletepro(user._id)">Remove from cart</button>
+                  <a routerLink="/mydata" mat-raised-button color="primary" style="margin:10px">Back</a>
+                 <br>
+                
+                </div>
+              </div>
+        </div>
+    </div>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>

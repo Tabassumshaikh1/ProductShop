@@ -1,0 +1,22 @@
+<div *ngIf="errMsg" class="alert alert-danger">
+    {{errMsg}}
+</div>
+<div class="row">
+<div class="col">
+    <img src="https://www.addictioncenter.com/cdn-cgi/image/width=780,height=400,fit=cover,format=auto,quality=100/app/uploads/2020/01/online_shopping_addiction-scaled.jpeg" alt="" style="width: 1319px; height:600px">
+</div>
+<div class="col" >
+<form [formGroup]="myForm" (ngSubmit)="postData()">
+    <h2 >Login </h2>
+    <div class="form-group">
+        <label style="color:whitesmoke">Email</label><br>
+        <input type="text" name="email"  formControlName="email" style="  width: 347px;">
+    </div>
+    <div class="form-group" >
+        <label style="color: whitesmoke;">Password</label><br>
+        <input type="password"  name="password" formControlName="password"style="  width: 347px;">
+    </div>
+    <input type="submit" value="login" class="btn btn-success" [disabled]="myForm.invalid" style="width:347px; margin-top:20px">
+</form>
+</div>
+</div>
